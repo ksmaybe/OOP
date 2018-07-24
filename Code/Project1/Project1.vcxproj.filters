@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="drill1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="unsafeconv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

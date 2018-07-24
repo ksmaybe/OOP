@@ -12,7 +12,7 @@ int main()
 	int age;
 	cin >> age;
 
-	int lol=2;
+	int lol = 2;
 	if (age < 0 or age>110)
 		simple_error("Error age");
 	else if (age < 17)
@@ -26,7 +26,7 @@ int main()
 	cout << "I heard that you had a birthday and you are now " << age << " years old!\n";
 	if (lol == 1)
 		cout << "You are young to be at NYU!\n";
-	else if (lol = 2)
+	else if (lol == 2)
 		cout << "Welcome to NYU!\n";
 	else
 		cout << "It's great to see senior students around campus!\n";
