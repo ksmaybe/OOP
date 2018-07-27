@@ -6,9 +6,10 @@ public:
 	class Invalid {};
 	Date(int y, int m, int d);
 	void add_day(int n);
-	const int year();
-	const int month();
-	const int day();
+	void add_year();
+	const int& year();
+	const int& month();
+	const int& day();
 private:
 	int y, m, d;
 	bool isvalid();

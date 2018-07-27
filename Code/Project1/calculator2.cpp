@@ -218,7 +218,7 @@ int main()
 		if (t.kind == 'q') break;
 		if (t.kind == ';')
 		{
-			cout << '=' << val << endl;
+			cout << '=' << setprecision(10) <<val << endl;
 			cout << '>';
 		}
 		else
