@@ -6,6 +6,7 @@ public:
 	class Invalid {};
 	Date(int y, int m, int d);
 	void add_day(int n);
+	void add_month(int n);
 	void add_year();
 	const int& year();
 	const int& month();

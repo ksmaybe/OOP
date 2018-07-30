@@ -4,7 +4,7 @@
 vector<int> non_leap_day{ 0,31,28,31,30,31,30,31,31,30,31,30,31 };
 vector<int> leap_day{ 0,31,29,31,30,31,30,31,31,30,31,30,31 };
 vector<int> last_day;
-vector<string> mons{ "haha","January","Feburary","March","April","May","June","July","August","September","Ocotober","November","December" };
+vector<string> mons{ "haha","January","Feburary","March","April","May","June","July","August","September","October","November","December" };
 
 Month operator++(Month & m)
 {
@@ -29,6 +29,8 @@ Date::Date(int yy, int mm, int dd)
 		last_day = non_leap_day;
 	if (!isvalid())
 		throw Invalid{};
+	else
+		cout << "Valid date inputted.\n";
 }
 
 
@@ -51,6 +53,23 @@ void Date::add_day(int n)
 				m = 1;
 				add_year();
 			}
+		}
+	}
+}
+void Date::add_month(int n)
+{
+	while(n>=12)
+	{
+		n -= 12;
+		add_year();
+	}
+	for (int x = 0; x < n; x++)
+	{
+		m++;
+		if(m==13)
+		{
+			m = 1;
+			add_year();
 		}
 	}
 }
@@ -125,3 +144,4 @@ catch (Date::Invalid)
 {
 	return f();
 }
+
