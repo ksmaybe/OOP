@@ -3,7 +3,8 @@
 struct Reading
 {
 	int hour;
-	double temperature;
+	double temperature1;
+	double temperature2;
 };
 
 int main()
@@ -23,7 +24,8 @@ int main()
 	vector<Reading> temps;
 	string input;
 	int hour;
-	double temperature;
+	double temperature1;
+	double temperature2;
 	while(ist >> input)
 	{
 		istringstream ss(input);
@@ -32,12 +34,19 @@ int main()
 		stringstream d(token);
 		d >> hour;
 		string token1;
-		getline(ss, token1, '\n');
-		stringstream k(token1);
-		k >> temperature;
+		getline(ss, token1, ',');
+		stringstream k1(token1);
+		k1 >> temperature1;
+		string token2;
+		getline(ss, token2, '\n');
+		stringstream k2(token2);
+		k2 >> temperature2;
 		if (hour < 0 || 23 < hour) error("hour out of range");
-		temps.push_back(Reading{ hour,temperature });
+		temps.push_back(Reading{ hour,temperature1,temperature2 });
 	}
-	for (int i = 0; i < temps.size(); ++i)
-		ost << '(' << temps[i].hour << '	' << temps[i].temperature << ')' << endl;
+	int t = temps.size();
+	for (int i = 0; i<t; ++i)
+		ost << temps[i].hour << '	' << temps[i].temperature1 << '	'<< temps[i].temperature2 << endl;
+	keep_window_open();
+	return 0;
 }

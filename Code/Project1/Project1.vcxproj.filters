@@ -15,16 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="date.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="date_test.cpp">
+    <ClCompile Include="fileio.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="date.h">
+    <None Include="data.comma">
       <Filter>Source Files</Filter>
-    </ClInclude>
+    </None>
   </ItemGroup>
 </Project>
