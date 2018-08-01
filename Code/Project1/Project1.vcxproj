@@ -19,10 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="fileio.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="data.comma" />
+    <ClCompile Include="allocate.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
