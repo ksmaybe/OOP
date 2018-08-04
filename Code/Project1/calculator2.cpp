@@ -84,7 +84,7 @@ Token Token_stream::get()
 	cin >> ch;
 	switch (ch)
 	{
-	case ';': case'q': case'=': case'%': case'p':
+	case ';': case'q': case'=': case'%': case'p': case'^':
 	case '(': case ')': case'+': case '-': case'*': case'/':
 		return Token{ ch };
 
@@ -153,20 +153,38 @@ double primary() {
 		error("primary expected");
 	}
 }
-double term()
+double expon()
 {
 	double left = primary();
+	Token t = ts.get();
+	while(true)
+	{
+		switch(t.kind)
+		{
+		case'^':
+		{left = pow(left, primary());
+		t = ts.get();
+		break; }
+		default:
+			ts.putback(t);
+			return left;
+		}
+	}
+}
+double term()
+{
+	double left = expon();
 	Token t = ts.get();
 	while (true)
 	{
 		switch (t.kind)
 		{
 		case'*':
-			left *= primary();
+			left *= expon();
 			t = ts.get();
 			break;
 		case'/':
-		{	double d = primary();
+		{	double d = expon();
 		if (d == 0)
 			error("division by zero");
 		left /= d;
@@ -174,7 +192,7 @@ double term()
 		break; }
 		case'%':
 		{
-			double d = primary();
+			double d = expon();
 			while (left >= d)
 				left -= d;
 			t = ts.get();
