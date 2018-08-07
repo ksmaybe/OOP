@@ -6,7 +6,7 @@ class vect
 	double* elem;
 public:
 	vect(int s)
-		:sz{ s }, elem{ new double[s] } {} /*{
+		:sz(s), elem{ new double[s] } {} /*{
 		for (int i = 0; i < sz; ++i) elem[i] = 0.0;
 	}
 	vect(initializer_list<double> lst)
@@ -34,7 +34,8 @@ void vect::set(int i, double d)
 
 void f(int n)
 {
-	vect v(3);
+	vect v(n);
+	cout << n << endl;
 	v.set(2, 2.2);
 	vect v2 = v;
 	v.set(1, 9.9);
@@ -45,7 +46,9 @@ void f(int n)
 
 int main()
 {
-	f(3);
+	for (int i = 0; i < 10000; i++)
+		f(i);
+	cout << "Finished looping\n";
 	keep_window_open();
 	return 0;
 }

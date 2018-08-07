@@ -8,14 +8,14 @@ public:
 	vect(const vect& arg);
 	vect & operator=(const vect& a);
 	vect(int s)
-		:sz{ s }, elem{ new double[s] } {} /*{
-										   for (int i = 0; i < sz; ++i) elem[i] = 0.0;
-										   }
-										   vect(initializer_list<double> lst)
-										   :sz{lst.size()},elem{new double[sz]}
-										   {
-										   copy(lst.begin(), lst.end(), elem);
-										   }*/
+		:sz{ s }, elem{ new double[s] } {
+		for (int i = 0; i < sz; ++i) elem[i] = 0.0;
+	   }
+	   vect(initializer_list<double> lst)
+	   :sz{static_cast<int>(lst.size())},elem{new double[sz]}
+	   {
+	   copy(lst.begin(), lst.end(), elem);
+	   }
 	~vect()
 	{
 		delete[] elem;
@@ -52,7 +52,8 @@ vect& vect::operator=(const vect& a)
 
 void f(int n)
 {
-	vect v(3);
+	cout << n << endl;
+	vect v(n);
 	v.set(2, 2.2);
 	vect v2 = v;
 	v.set(1, 9.9);
@@ -63,7 +64,7 @@ void f(int n)
 
 int main()
 {
-	f(3);
+	for (int i=3;i<=10000;i++) f(i);
 	keep_window_open();
 	return 0;
 }
