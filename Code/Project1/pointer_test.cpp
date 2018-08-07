@@ -9,12 +9,12 @@ int main()
 	int* ip = &i;
 	double* dp = &d;
 
-	cout << "c = " << c << " and its value is : " << endl;
+	cout << "char c = " << c << endl;
 	cout << "size of c is " << sizeof(c) << endl;
-	cout << "i = " << i << " and its value is : " << endl;
+	cout << "int i = " << i << endl;
 	cout << "size of i is " << sizeof(i) << endl;
-	cout << "d = " << d << " and its value is : "  << endl;
-	cout << "size of d  is " << sizeof(d) << endl;
+	cout << "double d = " << d << endl;
+	cout << "size of d  is " << sizeof(d) << endl << endl;;
 
 	cout << "cp = " << cp << " and its value is : " << *cp << endl;
 	cout << "size of cp is " << sizeof(cp) << endl;
