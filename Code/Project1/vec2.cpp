@@ -16,6 +16,7 @@ public:
 	   {
 	   copy(lst.begin(), lst.end(), elem);
 	   }
+	   double& operator[](int n) { return elem[n]; }
 	~vect()
 	{
 		delete[] elem;
@@ -54,17 +55,18 @@ void f(int n)
 {
 	cout << n << endl;
 	vect v(n);
-	v.set(2, 2.2);
+	v[2]=2.2;
 	vect v2 = v;
-	v.set(1, 9.9);
-	v2.set(0, 8.8);
-	cout << v.get(0) << ' ' << v.get(1) << ' ' << v.get(2) << endl;
-	cout << v2.get(0) << ' ' << v2.get(1) << ' ' << v2.get(2) << endl;
+	v[1]=9.9;
+	v2[0]= 8.8;
+	cout << v.get(0) << '\t' << v.get(1) << '\t' << v.get(2) << endl;
+	cout << v2.get(0) << '\t' << v2.get(1) << '\t' << v2.get(2) << endl;
+
 }
 
 int main()
 {
-	for (int i=3;i<=10000;i++) f(i);
+	for (int i = 4; i <= 10000;i++) (f(i));
 	keep_window_open();
 	return 0;
 }

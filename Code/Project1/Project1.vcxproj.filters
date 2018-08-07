@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="allocate.cpp">
+    <ClCompile Include="calculator2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
