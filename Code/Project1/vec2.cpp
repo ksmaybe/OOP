@@ -4,11 +4,13 @@ class vect
 {
 	int sz;
 	double* elem;
+	int space;
 public:
 	vect(const vect& arg);
 	vect & operator=(const vect& a);
 	vect(int s)
 		:sz{ s }, elem{ new double[s] } {
+		space = s;
 		for (int i = 0; i < sz; ++i) elem[i] = 0.0;
 	   }
 	   vect(initializer_list<double> lst)
@@ -23,6 +25,9 @@ public:
 	}
 	double get(int i);
 	void set(int i, double d);
+	void reserve(int newalloc);
+	void resize(int newsize);
+	void push_back(double d);
 };
 
 double vect::get(int i)
@@ -34,6 +39,33 @@ void vect::set(int i, double d)
 {
 	elem[i] = d;
 }
+
+void vect::reserve(int newalloc)
+{
+	if (newalloc <= space) return;
+	double* p = new double[newalloc];
+	for (int i = 0; i < sz; ++i) p[i] = elem[i];
+	delete[] elem;
+	elem = p;
+	space = newalloc;
+}
+
+
+void vect::resize(int newsize)
+{
+	reserve(newsize);
+	for (int i = sz; i < newsize; ++i) elem[i] = 0;
+	sz = newsize;
+}
+
+void vect::push_back(double d)
+{
+	if (space == 0) reserve(8);
+	else if (sz == space) reserve(2 * space);
+	elem[sz] = d;
+	++sz;
+}
+
 
 vect::vect(const vect& arg)
 	:sz{arg.sz},elem{new double[arg.sz]}
@@ -66,7 +98,7 @@ void f(int n)
 
 int main()
 {
-	for (int i = 4; i <= 10000;i++) (f(i));
+	f(5);
 	keep_window_open();
 	return 0;
 }
