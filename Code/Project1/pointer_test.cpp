@@ -2,7 +2,7 @@
 
 int main()
 {
-	char c = 'a';
+	/*char c = 'a';
 	int i = 4092;
 	double d = 3.14;
 	char* cp = &c;
@@ -21,7 +21,9 @@ int main()
 	cout << "ip = " << ip << " and its value is : " << *ip << endl;
 	cout << "size of ip is " << sizeof(ip) << endl;
 	cout << "dp = " << dp << " and its value is : " << *dp << endl;
-	cout << "size of dp is " << sizeof(dp) << endl;
+	cout << "size of dp is " << sizeof(dp) << endl;*/
+	char* v = "Callahan";
+	cout << v << endl;
 	keep_window_open();
 	return 0;
 }
