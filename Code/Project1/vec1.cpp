@@ -46,7 +46,7 @@ void f(int n)
 
 int main()
 {
-	for (int i = 0; i < 10000; i++)
+	for (int i = 3; i < 10000; i++)
 		f(i);
 	cout << "Finished looping\n";
 	keep_window_open();

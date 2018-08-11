@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="vec2.cpp" />
+    <ClCompile Include="calc3.cpp" />
+    <ClCompile Include="calculator3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="calc3.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -98,7 +98,7 @@ void f(int n)
 
 int main()
 {
-	f(5);
+	for(int i= 3;i<1000;++i) f(i);
 	keep_window_open();
 	return 0;
 }
